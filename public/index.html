@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Short Circuit</title>
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+	<form action="/" method="post">
+		<textarea id="message" name="message"></textarea>
+	</form>
+	<script type="text/javascript" src="js/jquery-2.0.min.js"></script>
+	<script type="text/javascript">
+		var textarea = document.getElementById("message");
+			textarea.addEventListener('keydown', function(e){
+				if (e.keyCode == 8) {
+					return true;
+				}
+				if (e.keyCode == 13 && !e.ctrlKey) {
+					e.preventDefault();
+					this.blur();
+					$.post('/', $('form').serialize(), function(data, status) {
+						textarea.value = "";
+					});
+					return false;
+				}
+				if (this.value.length == 32) {
+					e.preventDefault();
+					return true;
+				}
+			});
+	</script>
+</body>
+</html>

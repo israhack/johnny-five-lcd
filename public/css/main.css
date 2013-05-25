@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Register';
+    src: url('../fonts/Register.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+textarea {
+    font-family: Register;
+    background: url(../images/lcd.png) no-repeat;
+    font-size: 60px;
+    width: 850px;
+    height: 383px;
+    outline: none;
+    padding: 123px 62px 0px 107px;
+    letter-spacing: 0em;
+    line-height: 1.1em;
+    resize: none;
+    overflow: hidden;
+}
